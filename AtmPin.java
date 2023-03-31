@@ -25,7 +25,7 @@ public class AtmPin {
 			System.out.println("Enter your four digit pin :");
 			enteredPIN = sc.nextInt();
 			
-			if (counter <3 && actualPIN == enteredPIN) {
+			if (counter <=3 && actualPIN == enteredPIN) {
 				System.out.println("Please enter your withdrawn amount:");
 				withdrawAmount = sc.nextInt();
 
@@ -36,12 +36,14 @@ public class AtmPin {
 				}
 				else {
 					System.out.println("you do not have enough balance");
+					       if(counter==3) {
+					    	   System.out.println("please try it tomorow you exceed the limit for today");
+					       }
 					}
 
 			}else {
 				if(counter==3)
-				System.out.println(" card blocked");
-			}
+				System.out.println(" card blocked");}
 		} // for loop ends here
 	}// checkPinIsCorrect() method ends here
 }
